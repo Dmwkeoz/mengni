@@ -17,7 +17,7 @@ shuffle(cards = this.data.cards) {
             top: card.top, // 记录原始位置
             width: card.width, // 记录原始宽高
             height: card.height, // 记录原始宽高
-            layer: card.layer, // 记录原始层级
+            layer: card.layer, // 记录普通层级
             originalIndex: card.originalIndex // 记录原始层级
         }));
 
@@ -36,7 +36,7 @@ shuffle(cards = this.data.cards) {
             card._futureTop = target.top; // 目标位置
             card._futureWidth = target.width; // 目标宽度
             card._futureHeight = target.height; // 目标高度
-            card._futureLayer = target.layer; // 目标层级
+            card._futureLayer = target.layer; // 目标普通层级
             card._futureOriginalIndex = target.originalIndex; // 目标原始层级
             if (!card.animating && (card.left !== target.left || card.top !== target.top || card.width !== target.width || card.height !== target.height)) { // 如果卡片没有在动画中，且位置或大小有变化
                 this.startCardMoveAnimation(card, target.left, target.top, 1000, target.width, target.height); // 开始动画
@@ -52,15 +52,15 @@ shuffle(cards = this.data.cards) {
         setTimeout(() => {
             shuffledCards.forEach((card) => { // 遍历每个打乱后的卡片
                 // 赋予目标属性
-                if (typeof card._futureLayer !== 'undefined') card.layer = card._futureLayer; // 赋予目标层级
+                if (typeof card._futureLayer !== 'undefined') card.layer = card._futureLayer; // 赋予普通层级
                 if (typeof card._futureOriginalIndex !== 'undefined') card.originalIndex = card._futureOriginalIndex; // 赋予原始层级
                 if (typeof card._futureLeft !== 'undefined') card.left = card._futureLeft; // 赋予目标位置
                 if (typeof card._futureTop !== 'undefined') card.top = card._futureTop; // 赋予目标位置
                 if (typeof card._futureWidth !== 'undefined') card.width = card._futureWidth; // 赋予目标宽度
                 if (typeof card._futureHeight !== 'undefined') card.height = card._futureHeight; // 赋予目标高度
                 // 清理临时属性
-                delete card._futureLayer; // 记录原始层级
-                delete card._futureOriginalIndex; // 记录原始索引
+                delete card._futureLayer; // 记录普通层级
+                delete card._futureOriginalIndex; // 记录原始层级
                 delete card._futureLeft; // 记录原始位置
                 delete card._futureTop; // 记录原始位置
                 delete card._futureWidth; // 记录原始宽度
