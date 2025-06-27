@@ -60,12 +60,12 @@ shuffle(cards = this.data.cards) {
                 if (typeof card._futureWidth !== 'undefined') card.width = card._futureWidth; // 赋予目标宽度
                 if (typeof card._futureHeight !== 'undefined') card.height = card._futureHeight; // 赋予目标高度
                 // 清理临时属性
-                delete card._futureLayer; // 记录普通层级
-                delete card._futureOriginalIndex; // 记录原始层级
-                delete card._futureLeft; // 记录原始位置
-                delete card._futureTop; // 记录原始位置
-                delete card._futureWidth; // 记录原始宽度
-                delete card._futureHeight; // 记录原始高度
+                delete card._futureLayer; // 普通层级
+                delete card._futureOriginalIndex; // 原始层级
+                delete card._futureLeft; // 原始位置
+                delete card._futureTop; // 原始位置
+                delete card._futureWidth; // 原始宽度
+                delete card._futureHeight; // 原始高度
             });
 
             this.initializeBlocking();
