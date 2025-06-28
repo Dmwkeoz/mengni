@@ -14,10 +14,10 @@ shuffle(cards = this.data.cards) {
 
         // 1. 记录所有可洗牌卡片的当前位置和原始层级
         const oldPositions = visibleCards.map(card => ({
-            left: card.left, // 记录原始位置
-            top: card.top, // 记录原始位置
-            width: card.width, // 记录原始宽高
-            height: card.height, // 记录原始宽高
+            left: card.left, // 记录位置
+            top: card.top, // 记录位置
+            width: card.width, // 记录宽高
+            height: card.height, // 记录宽高
             layer: card.layer, // 记录普通层级
             originalIndex: card.originalIndex // 记录原始层级
         }));
@@ -62,14 +62,14 @@ shuffle(cards = this.data.cards) {
                 // 清理临时属性
                 delete card._futureLayer; // 普通层级
                 delete card._futureOriginalIndex; // 原始层级
-                delete card._futureLeft; // 原始位置
-                delete card._futureTop; // 原始位置
-                delete card._futureWidth; // 原始宽度
-                delete card._futureHeight; // 原始高度
+                delete card._futureLeft; // 位置
+                delete card._futureTop; // 位置
+                delete card._futureWidth; // 宽度
+                delete card._futureHeight; // 高度
             });
 
-            this.initializeBlocking();
-            this.game.render();
+            this.initializeBlocking(); // 判断遮挡关系
+            this.game.render(); // 渲染画面
         }, 1010); // 确保动画结束后再赋值
 return cards;
 }
