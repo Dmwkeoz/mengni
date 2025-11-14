@@ -3,10 +3,10 @@
 
 
 
-// Dynamic Layer Consistency（DLC）仅用 52 行代码解决动态层级一致性问题
+// Dynamic Layer Consistency（DLC）解决动态层级一致性问题
 // MIT License
 // Copyright (c) 2025 Dmwkeoz
-// https://github.com/Dmwkeoz/mengni/blob/main/%E5%8A%A8%E6%80%81%E5%B1%82%E7%BA%A7%20O(1)%20%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88.js
+// https://github.com/Dmwkeoz/mengni/blob/main/%E5%8A%A8%E6%80%81%E5%B1%82%E7%BA%A7%20O(n)%20%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E7%AE%A1%E7%90%86%E6%96%B9%E6%A1%88.js
 //------------主要逻辑，动态层级管理的运用场景-------------
 
 //以洗牌举例
@@ -76,5 +76,6 @@ shuffle(cards = this.data.cards) {
         }, 1010); // 确保动画结束后再赋值
 return cards;
 }
+
 
 
