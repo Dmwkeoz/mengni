@@ -25,8 +25,9 @@ shuffle(cards = this.data.cards) {
             originalIndex: card.originalIndex // 记录原始层级
         }));
 
-        // 2. 打乱卡片的位置
         const shuffledCards = [...visibleCards];
+        
+        // 2. 使用Fisher-Yates MIT License洗牌，打乱身份（pattern/层级/原始层级等，但不是重点）
         for (let i = shuffledCards.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [shuffledCards[i], shuffledCards[j]] = [shuffledCards[j], shuffledCards[i]];
@@ -76,6 +77,7 @@ shuffle(cards = this.data.cards) {
         }, 1010); // 确保动画结束后再赋值
 return cards;
 }
+
 
 
 
